@@ -1,0 +1,234 @@
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Impact', fantasy;
+    text-decoration: underline;
+    white-space: nowrap;
+    margin: auto;
+}
+
+table {
+    width: 600px;
+    border-collapse: collapse;
+    align-items: center;
+    text-align: center;
+}
+
+.centrador {
+    display: grid;
+    justify-content: center;
+    /* Centra horizontalmente */
+    margin: auto;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+td[contenteditable="true"] {
+    background-color: #f9f9f9;
+    cursor: text;
+}
+
+.selector-3x3 {
+    width: 100%;
+    height: 0;
+}
+
+.selector-3x3 td {
+    border: none;
+    text-align: center;
+    position: relative;
+    width: 33.33%;
+    height: 33.33%;
+    padding: 0;
+}
+
+.selector-3x3 img {
+    max-width: 90%;
+    /* Ajusta el tamaño de la imagen dentro de la celda */
+    max-height: 90%;
+    object-fit: contain;
+    /* Mantiene la relación de aspecto de la imagen */
+}
+
+.selector-3x3 td img:hover {
+    filter: brightness(50%);
+    /* Oscurece la imagen al pasar el ratón por encima */
+}
+
+#pistas {
+    margin-top: 350px;
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+}
+
+#pistas p {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.escala-grises {
+    filter: grayscale(100%);
+    /* Convertir a escala de grises */
+    opacity: 0.25;
+    /* Reducir la opacidad */
+}
+
+#zebra-puzzle>tbody>tr>td {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco semi-transparente */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    border: 2px solid #000000;
+    /* Borde gris claro */
+    height: 100px;
+}
+
+#zebra-puzzle th {
+    background-color: rgba(178, 178, 178, 1);
+    text-align: center;
+    /* Centra el texto en las celdas */
+    height: 20px;
+    /* Altura fija para las celdas */
+    border: 2px solid #000000;
+}
+
+#zebra-puzzle th img {
+    width: 85px;
+    /* Ajusta el ancho según el tamaño deseado */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    display: block;
+    /* Elimina el espacio adicional alrededor de las imágenes */
+    margin: auto;
+    /* Centra la imagen dentro de la celda */
+    padding: 15px;
+}
+
+.categorias {
+    padding: 15px;
+}
+
+#zebra-puzzle th.no-style {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.opciones {
+    display: none;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: auto;
+}
+
+.pistas-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.pistas-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre las flechas y el texto */
+}
+
+.pista-btn {
+    background: #ccc;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: background-color 0s ease, box-shadow 0s ease;
+}
+
+.pista-btn:hover {
+    background-color: #bbb;
+    /* Cambiar el fondo a un gris más oscuro */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
+}
+
+.pista-btn:active {
+    background-color: #aaa;
+    /* Cambiar el fondo a un gris aún más oscuro */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Sombra interna */
+}
+
+.pista-btn:focus {
+    outline: none;
+}
+
+.pistas-header h2 {
+    margin: 0 10px;
+    font-size: 32px;
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    color: #000;
+}
+
+.pista-checkbox {
+    display: block;
+    margin: 0 auto;
+    /* Centramos el checkbox */
+    transform: scale(1.5);
+    /* Ajustamos el tamaño del checkbox */
+    margin-bottom: 5px;
+    /* Añadimos espacio debajo del checkbox */
+}
+
+.global-cell {
+    position: relative;
+    /* Otros estilos comunes que ya tienes */
+}
+
+.global-cell img.apagada {
+    opacity: 0.5;
+    /* Cambia la opacidad de las imágenes */
+    filter: grayscale(100%);
+    /* Escala de grises para dar el efecto de apagado */
+}
+
+.global-cell.apagada {
+    background-color: rgba(255, 0, 0, 0.1);
+    /* Fondo ligeramente rojo */
+}
+
+.global-cell-2 {
+    background-color: rgba(255, 0, 0, 0.1);
+    /* Fondo ligeramente rojo */
+}
