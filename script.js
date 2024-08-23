@@ -1,39 +1,33 @@
 function seleccionar(element) {
-    // Obtener la tabla 3x3 en la que está la celda
     const table = element.closest('table');
-    const celdas = table.querySelectorAll('td'); // Asegúrate de que estás buscando solo celdas con la clase global-cell
+    const celdas = table.querySelectorAll('td');
 
-    // Contar cuántas imágenes están visibles y no en escala de grises
     let visibleCount = 0;
-    let lastVisibleCell = null;
 
     celdas.forEach(td => {
         const img = td.querySelector('img');
         if (img && !img.classList.contains('apagada')) {
             visibleCount++;
-            lastVisibleCell = td; // Actualizar la última celda visible
+            lastVisibleCell = td;
         }
     });
 
-    // Alternar la visibilidad del número o imagen
     const img = element.querySelector('img');
     if (img) {
         if (img.classList.contains('apagada')) {
             img.classList.remove('apagada');
-            img.style.opacity = "1"; // Restaurar opacidad
-            element.classList.remove('apagada'); // Restaurar borde y fondo
+            img.style.opacity = "1";
+            element.classList.remove('apagada');
         } else {
-            // Asegurarse de que no se desactiven todas las imágenes si sólo queda una activa
             if (visibleCount > 1) {
                 img.classList.add('apagada');
-                img.style.opacity = "0.25"; // Reducir opacidad
-                element.classList.add('apagada'); // Añadir borde y fondo
+                img.style.opacity = "0.25";
+                element.classList.add('apagada');
             }
         }
     }
 
-    // Actualizar el contenedor destacado si sólo queda una imagen visible
-    visibleCount = 0; // Recontar visible count para asegurarnos de que la imagen está actualizada
+    visibleCount = 0;
     celdas.forEach(td => {
         const img = td.querySelector('img');
         if (img && !img.classList.contains('apagada')) {
@@ -42,11 +36,7 @@ function seleccionar(element) {
     });
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const fruitImages = [
         'manzana.png',
         'platano.png',
@@ -58,7 +48,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'kiwi.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -66,10 +55,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(fruitImages);
 
-    // Selecciona todas las celdas de frutas
     const fruitCells = document.querySelectorAll('[id^="fruits-cell-"]');
     fruitCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -82,7 +69,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const sportImages = [
         'futbol.png',
         'bolos.png',
@@ -94,7 +80,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'rugby.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -102,10 +87,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(sportImages);
 
-    // Selecciona todas las celdas de frutas
     const sportCells = document.querySelectorAll('[id^="sports-cell-"]');
     sportCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -118,7 +101,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const colorImages = [
         'marron.png',
         'azul.png',
@@ -130,7 +112,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'morado.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -138,10 +119,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(colorImages);
 
-    // Selecciona todas las celdas de frutas
     const colorCells = document.querySelectorAll('[id^="colors-cell-"]');
     colorCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -154,7 +133,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const instrumentImages = [
         'maracas.png',
         'guitarra.png',
@@ -166,7 +144,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'bongos.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -174,10 +151,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(instrumentImages);
 
-    // Selecciona todas las celdas de frutas
     const instrumentCells = document.querySelectorAll('[id^="instruments-cell-"]');
     instrumentCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -190,7 +165,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const vehicleImages = [
         'bicicleta.png',
         'submarino.png',
@@ -202,7 +176,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'coche.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -210,10 +183,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(vehicleImages);
 
-    // Selecciona todas las celdas de frutas
     const vehicleCells = document.querySelectorAll('[id^="vehicles-cell-"]');
     vehicleCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -226,7 +197,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const professionImages = [
         'periodista.png',
         'dentista.png',
@@ -238,7 +208,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'policia.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -246,10 +215,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(professionImages);
 
-    // Selecciona todas las celdas de frutas
     const professionCells = document.querySelectorAll('[id^="professions-cell-"]');
     professionCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -262,7 +229,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Lista de imágenes de frutas
     const animalImages = [
         'oveja.png',
         'pato.png',
@@ -274,7 +240,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         'cerdo.png'
     ];
 
-    // Función para mezclar un array
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -282,10 +247,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Mezcla las imágenes de frutas
     shuffle(animalImages);
 
-    // Selecciona todas las celdas de frutas
     const animalCells = document.querySelectorAll('[id^="animals-cell-"]');
     animalCells.forEach(cell => {
         const images = cell.querySelectorAll('img');
@@ -362,12 +325,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('pista-contenido').innerHTML = pistas[pistaActual];
 
         const checkbox = document.getElementById(`checkbox-${pistaActual + 1}`);
-        checkbox.checked = checkboxStates[pistaActual]; // Aplicar el estado guardado del checkbox
+        checkbox.checked = checkboxStates[pistaActual];
 
-        // Asociar el evento al checkbox
         checkbox.addEventListener('change', () => toggleCheckbox(pistaActual + 1));
 
-        // Actualizar el estado de tachado
         if (checkboxStates[pistaActual]) {
             document.getElementById(`texto-pista-${pistaActual + 1}`).style.textDecoration = 'line-through';
             document.getElementById(`texto-pista-${pistaActual + 1}`).style.textDecorationThickness = '5px';
@@ -392,27 +353,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         actualizarPista();
     };
 
-    // Iniciar con la primera pista
     actualizarPista();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const allCells = document.querySelectorAll('.opciones');
 allCells.forEach(cell => {
     cell.style.display = 'block';
 });
-
