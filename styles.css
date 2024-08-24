@@ -220,7 +220,8 @@ td[contenteditable="true"] {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid #000000
+    border: 2px solid #000000;
+    margin: auto;
 }
 
 #preguntas {
@@ -260,6 +261,7 @@ td[contenteditable="true"] {
 
 .crucigrama-celda.vacia {
     background-color: transparent;
+    ;
     border: none;
 }
 
