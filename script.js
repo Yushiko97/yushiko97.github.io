@@ -360,3 +360,22 @@ const allCells = document.querySelectorAll('.opciones');
 allCells.forEach(cell => {
     cell.style.display = 'block';
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const inputs = document.querySelectorAll('.editable');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', function (e) {
+            let value = e.target.value.toUpperCase();
+            value = value.replace(/[^A-ZÑñ]/g, '');
+            e.target.value = value;
+        });
+
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Backspace' || e.key === 'Delete') {
+                e.target.value = '';
+                e.preventDefault();
+            }
+        });
+    });
+});
