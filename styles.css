@@ -231,7 +231,8 @@ td[contenteditable="true"] {
     margin: 20px auto;
     gap: 40px;
     align-items: flex-start;
-    padding: 40px 0;
+    padding: 20px 0;
+    font-size: 16px;
 }
 
 .crucigrama-header {
@@ -259,7 +260,6 @@ td[contenteditable="true"] {
 
 .crucigrama-celda.vacia {
     background-color: transparent;
-    ;
     border: none;
 }
 
