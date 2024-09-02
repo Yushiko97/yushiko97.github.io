@@ -111,6 +111,7 @@ td[contenteditable="true"] {
     display: block;
     margin: auto;
     padding: 15px;
+    image-rendering: pixelated;
 }
 
 .categorias {
